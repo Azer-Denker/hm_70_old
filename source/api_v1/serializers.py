@@ -19,3 +19,7 @@ class ArticleSerializer(serializers.Serializer):
             setattr(instance, key, value)
         instance.save()
         return instance
+
+    def delete(self, instance):
+        instance.delete()
+        return instance.pk
